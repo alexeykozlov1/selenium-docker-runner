@@ -11,10 +11,14 @@ pipeline{
             sh "docker-compose up search-module test-form"
 }
 }
-        stage("bring grid down"){
-            steps{
-                sh "docker-compose down"
 }
+
+    post{
+        always{
+            archiveArtifacts artifacts: '/Users/alexeykozlov/Documents/draft/target/output/**'
+            sh "docker-compose down"
 }
+    
 }
+
 }
