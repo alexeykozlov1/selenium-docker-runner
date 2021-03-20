@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Start Grid"){
             steps{
-            sh "docker-compose up -d chrome firefox"
+            sh "docker-compose up -d --scale chrome=5 firefox"
 }
 }
         stage("Run Test"){
@@ -15,7 +15,7 @@ pipeline{
 
     post{
         always{
-            archiveArtifacts artifacts: '/Users/alexeykozlov/Documents/draft/target/output/**'
+            archiveArtifacts artifacts: './output/**'
             sh "docker-compose down"
 }
     
