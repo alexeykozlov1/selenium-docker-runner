@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+        stage("Pull lates image"){
+            steps{
+                sh "docker pull alexeykozlov1988/selenium-grid-docker"
+}
+}
         stage("Start Grid"){
             steps{
             sh "docker-compose up -d --scale chrome=5 firefox"
