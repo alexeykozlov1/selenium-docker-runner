@@ -8,7 +8,7 @@ pipeline{
 }
         stage("Start Grid"){
             steps{
-            sh "docker-compose up -d --scale chrome=6 firefox"
+            sh "docker-compose up -d --scale chrome=5 firefox"
 }
 }
         stage("Run Test"){
