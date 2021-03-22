@@ -1,12 +1,7 @@
 pipeline{
     agent any
     stages{
-     stage('delete files from workspace') {
-  steps {
-    sh 'ls -l'
-    sh 'sudo rm -rf ./*'
-  }
-}
+    
         stage("Pull lates image"){
             steps{
                 sh "docker pull alexeykozlov1988/selenium-grid-docker"
