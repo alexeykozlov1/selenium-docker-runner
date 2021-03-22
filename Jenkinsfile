@@ -1,6 +1,12 @@
 pipeline{
     agent any
     stages{
+     stage('delete files from workspace') {
+  steps {
+    sh 'ls -l'
+    sh 'sudo rm -rf ./*'
+  }
+}
         stage("Pull lates image"){
             steps{
                 sh "docker pull alexeykozlov1988/selenium-grid-docker"
@@ -8,7 +14,7 @@ pipeline{
 }
         stage("Start Grid"){
             steps{
-            sh "docker-compose up -d --scale chrome=80 firefox"
+            sh "docker-compose up -d --scale chrome=200 firefox"
 }
 }
         stage("Run Test"){
