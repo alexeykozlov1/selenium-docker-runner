@@ -56,3 +56,24 @@ services:
       - MODULE=testng.xml
     volumes:
       - ./output/test-form:/usr/share/test/test-output
+    testScope3:
+    image: alexeykozlov1988/selenium-grid-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - MODULE=testng.xml
+    volumes:
+      - ./output/test-form:/usr/share/test/test-output
+    testScope4:
+    image: alexeykozlov1988/selenium-grid-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - MODULE=testng.xml
+    volumes:
+      - ./output/test-form:/usr/share/test/test-output
+
