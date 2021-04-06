@@ -16,7 +16,7 @@ services:
       - hub
     environment:
       - HUB_HOST=hub
-  search-module:
+  testScope1:
     image: alexeykozlov1988/selenium-grid-docker
     depends_on:
       - chrome
@@ -26,7 +26,7 @@ services:
       - MODULE=testng.xml
     volumes:
     - ./output/search-module:/usr/share/test/test-output
-  test-form:
+    testScope2:
     image: alexeykozlov1988/selenium-grid-docker
     depends_on:
       - chrome
