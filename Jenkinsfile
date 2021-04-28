@@ -14,7 +14,7 @@ pipeline{
 }
         stage("Run Test"){
             steps{
-            sh "docker-compose up testScope1 testScope2 testScope3 testScope4"
+            sh "docker-compose up testScope1"
 }
 }
 }
